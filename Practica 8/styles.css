@@ -1,0 +1,239 @@
+:root{
+    --background:#121212;
+    --off-white:#b3b3b3;
+    --darker-gray:#181818;
+    --dark-gray:#282828;
+    --spotify-green:#1db954;
+    --gray:#1f1f1f;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    width: 100%;;
+}
+main{
+    flex: 1;
+    display: flex;
+    flex-direction:column;
+    padding: 30px;
+}
+.playlist-header{
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+    position: relative;
+}
+.playlist-cover{
+    width: 100%;
+    border-radius: 10px;
+    height: clamp(15rem,40vh,30rem);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    object-fit: cover;
+    object-position: top;
+}
+.song-icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 2rem;
+}
+.playlist-info{
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+}
+.playlist-info h1{
+    font-size: 3rem;
+    font-weight: bold;
+}
+.playlist-desc{
+    color: var(--off-white);
+    font-size: 0.875rem;
+}
+body{
+    background-color: var(--background);
+    color: white;
+    font-family:"Helvetica Neue", sans-serif;
+    height: 100vh;
+}
+.play-button{
+    background-color: var(--spotify-green);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.like-button, .download-button{
+    background: none;
+    border:none;
+    cursor: pointer;
+}
+.download-button img, .like-button img{
+    filter: invert(1);
+    width: 22px;
+}
+.controls{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 25px;
+}
+.songs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.song-header{
+    display: none;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 8px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background-color: var(--gray);
+}
+.song-header,.songs-header p{
+    display: none;
+}
+.song-info p:first-child {
+    font-size: 1.25rem;
+}
+.row{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+}
+.row:hover{
+    background-color: var(--dark-gray);
+}
+.wide{
+    flex: 2;
+}
+.num, .duration{
+    width: 10%;
+    text-align: center;
+} 
+.num{
+    font-size:2rem;
+    font-weight: 600;
+}
+.date{
+    display: none;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.25rem;
+}
+.song-info-mobile{
+    display: flex;
+    flex-direction: row;
+    flex: 4;
+}
+.sidebar{
+    display: none;
+}
+@media (min-width: 770px){
+.song-header{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 8px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background-color: var(--gray);
+}
+.song-header p{
+    display: block;
+}
+.row{
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 8px;
+}
+.date{
+    display: block;
+    width: 20%;
+}
+
+.num{
+    font-weight: normal;
+    font-size: 1rem;
+}
+.song-info p:first-child {
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+.song-header p:nth-child(3){
+    margin-left: 2.75rem;
+}
+.song-icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 1rem;
+}
+.sidebar{
+    display: flex;
+    background-color: black;
+    width: 15rem;
+    flex-direction: column;
+}
+.sidebar-container{
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+}
+.titulo{
+   color: var(--off-white);
+   font-weight: bold;
+   margin-left:1rem ;
+   margin-bottom: 1rem;
+}
+.tipos-playlist{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-left: 1rem;
+}
+.tipos-playlist .sidebar-button{
+    background: none;
+    border: none;
+    color:white;
+    cursor: pointer;
+}
+.mis-playlists{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    gap: .5rem;
+}
+.mis-playlists .sidebar-button{
+    background-color: var(--dark-gray);
+    border-radius: 5px;
+    height: 2.5rem;
+    border:none;
+    text-align: left;
+    padding-left: .5rem;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+} 
+
+}
